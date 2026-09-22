@@ -20,17 +20,21 @@ Users download the workbook, review and complete it, then hand it back for uploa
 The workbook relies on the **OperaExcel Connector** for database connectivity and data extraction.
 
 1. [Get started with the connector](https://shaifhassan.github.io/opera-cli-release/#/getting_started/getstarted)
-2. [Set up the connector as self-hosted](https://shaifhassan.github.io/opera-cli-release/#/getting_started/self-hosted) *(recommended)*
+2. [Set up the connector as self-hosted](https://shaifhassan.github.io/opera-cli-release/#/getting_started/self-hosted) _(recommended)_
 3. [Add the Oracle connection](https://shaifhassan.github.io/opera-cli-release/#/servers?id=add-oracle) — name the connection the same as the resort code you're connecting to
-4. [Install the Excel add-in](https://shaifhassan.github.io/opera-cli-release/#/getting_started/excel-add-in)
+4. [Test the Oracle Connection](https://shaifhassan.github.io/opera-cli-release/#/servers?id=connect)
+5. [Install the Excel add-in](https://shaifhassan.github.io/opera-cli-release/#/getting_started/excel-add-in)
 
 ## Usage
 
 1. **Download the latest workbook** from the [releases page](https://github.com/Hospitality-Technology-Maldives/htm_global_pre_installation_workbook/releases).
 2. **Property Information sheet** — enter the Report Code as the connection identifier, along with the resort code.
+   ![property_info](_media/prop_info.JPG)
+
 3. **Opera Import sheet** — lists every worksheet available in the workbook.
    - Worksheets without a data extraction endpoint show `N/A` in the **Import?** column.
    - For the rest, choose **Yes** or **No** in the **Import?** column dropdown to select which modules/worksheets to import.
+     ![import_sheet](_media/import_sheet.JPG)
 4. **Clear** — removes property-specific codes from sheets marked **Yes**. Recommended before importing a fresh resort.
 5. **Download Data** — pulls data from each selected endpoint and appends it to the property-specific codes. Progress is reported per sheet in the **Import** worksheet.
 
@@ -39,8 +43,6 @@ Common statuses you may see: `Success`, `Error: No Data Found`, and various data
 ## Customizing endpoints
 
 Unhide all columns on the OPERA Import sheets to reveal the endpoint configuration.
-
-*(screenshot placeholder)*
 
 Edit the **Endpoint Version** and **Endpoint** columns as needed.
 
