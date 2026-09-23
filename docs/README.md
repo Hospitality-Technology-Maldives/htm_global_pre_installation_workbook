@@ -75,14 +75,22 @@ Edit the **Endpoint Version** and **Endpoint** columns as needed.
 ## Adding a custom endpoint
 
 1. Write a SQL query following the [fetch formula guide](https://shaifhassan.github.io/opera-cli-release/#/excel_formula/fetch), then add it to the connector service.
-2. set the sql folder path and place the query files inside the folder. (if connector is running restart the connector)
+2. Optionally you can set a sql folder path and place the query files inside the folder. (if connector is running restart the connector)
 
 ```
 setx OPERA_SQL_DIR "D:\sql"
 ```
 
-3. The query must include **no parameters, or exactly one** — `:1`, used for the resort filter. No other dynamic parameters are supported.
-4. In the endpoint definition, set:
+3. If you want to use the default location then run the connector from the required path where you have the sql folder. you can verify the working directory when you start the connector
+
+```
+Working Directory : C:\Users\User
+Executable Path   : C:\Users\User\AppData\Local\Xkyeron\opera_connector.exe
+OPERA_SQL_DIR     : D:\SQL
+```
+
+4. The query must include **no parameters, or exactly one** — `:1`, used for the resort filter. No other dynamic parameters are supported.
+5. In the endpoint definition, set:
    - `Version` = `Custom`
    - `Endpoint` = the query file name, without file extension (e.g. `viplevels`)
 
