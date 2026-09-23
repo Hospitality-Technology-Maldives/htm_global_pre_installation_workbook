@@ -29,6 +29,12 @@ irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/
 
 ![powershell](_media/powershell.JPG)
 
+to re run the guided connection setup any time run the below command on powershell
+
+```powershell
+irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/setup-connection.ps1 | iex
+```
+
 See the [Windows guided install guide](https://shaifhassan.github.io/opera-cli-release/#/getting_started/windows-guided-install) for details on what the script does.
 
 ### Advanced / manual setup
