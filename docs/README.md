@@ -19,8 +19,22 @@ Users download the workbook, review and complete it, then hand it back for uploa
 
 The workbook relies on the **OperaExcel Connector** for database connectivity and data extraction.
 
+### Guided install (recommended)
+
+Run this in PowerShell to install the connector and walk through a guided self-hosted setup, including adding the Oracle connection:
+
+```powershell
+irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/install.ps1 | iex
+```
+
+See the [Windows guided install guide](https://shaifhassan.github.io/opera-cli-release/#/getting_started/windows-guided-install) for details on what the script does.
+
+### Advanced / manual setup
+
+For manual setup, individual steps, or troubleshooting:
+
 1. [Get started with the connector](https://shaifhassan.github.io/opera-cli-release/#/getting_started/getstarted)
-2. [Set up the connector as self-hosted](https://shaifhassan.github.io/opera-cli-release/#/getting_started/self-hosted) _(recommended)_
+2. [Set up the connector as self-hosted](https://shaifhassan.github.io/opera-cli-release/#/getting_started/self-hosted)
 3. [Add the Oracle connection](https://shaifhassan.github.io/opera-cli-release/#/servers?id=add-oracle) — name the connection the same as the resort code you're connecting to
 4. [Test the Oracle Connection](https://shaifhassan.github.io/opera-cli-release/#/servers?id=connect)
 5. [Install the Excel add-in](https://shaifhassan.github.io/opera-cli-release/#/getting_started/excel-add-in)
