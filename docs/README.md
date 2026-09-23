@@ -27,6 +27,8 @@ Run this in PowerShell to install the connector and walk through a guided self-h
 irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/install.ps1 | iex
 ```
 
+![powershell](_media/powershell.JPG)
+
 See the [Windows guided install guide](https://shaifhassan.github.io/opera-cli-release/#/getting_started/windows-guided-install) for details on what the script does.
 
 ### Advanced / manual setup
@@ -42,16 +44,19 @@ For manual setup, individual steps, or troubleshooting:
 ## Usage
 
 1. **Download the latest workbook** from the [releases page](https://github.com/Hospitality-Technology-Maldives/htm_global_pre_installation_workbook/releases).
-2. **Property Information sheet** — enter the Report Code as the connection identifier, along with the resort code.
+2. Right-click the downloaded file, select **Properties**, then check **Unblock** before opening it.
+3. Open the workbook in Excel and choose **Enable Macros** or **Enable Content** if Excel shows a security warning.
+4. If macros are still disabled, enable them in Excel via **File > Options > Trust Center > Trust Center Settings > Macro Settings**, then reopen the workbook.
+5. **Property Information sheet** — enter the Report Code as the connection identifier, along with the resort code.
    ![property_info](_media/prop_info.JPG)
 
-3. **Opera Import sheet** — lists every worksheet available in the workbook.
+6. **Opera Import sheet** — lists every worksheet available in the workbook.
    ![import_sheet](_media/import_sheet.JPG)
    - Worksheets without a data extraction endpoint show `N/A` in the **Import?** column.
    - For the rest, choose **Yes** or **No** in the **Import?** column dropdown to select which modules/worksheets to import.
 
-4. **Clear** — removes property-specific codes from sheets marked **Yes**. Recommended before importing a fresh resort.
-5. **Download Data** — pulls data from each selected endpoint and appends it to the property-specific codes. Progress is reported per sheet in the **Import** worksheet.
+7. **Clear** — removes property-specific codes from sheets marked **Yes**. Recommended before importing a fresh resort.
+8. **Download Data** — pulls data from each selected endpoint and appends it to the property-specific codes. Progress is reported per sheet in the **Import** worksheet.
 
 Common statuses you may see: `Success`, `Error: No Data Found`, and various database errors.
 
