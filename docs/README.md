@@ -59,7 +59,9 @@ For manual setup, individual steps, or troubleshooting:
 6. **Opera Import sheet** — lists every worksheet available in the workbook.
    ![import_sheet](_media/import_sheet.JPG)
    - Worksheets without a data extraction endpoint show `N/A` in the **Import?** column.
+   - You can choose to include any existing worksheet in clear procedure by selecting **Clear**.
    - For the rest, choose **Yes** or **No** in the **Import?** column dropdown to select which modules/worksheets to import.
+   - For
 
 7. **Clear** — removes property-specific codes from sheets marked **Yes**. Recommended before importing a fresh resort.
 8. **Download Data** — pulls data from each selected endpoint and appends it to the property-specific codes. Progress is reported per sheet in the **Import** worksheet.
