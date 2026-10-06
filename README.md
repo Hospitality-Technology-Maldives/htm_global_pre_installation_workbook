@@ -27,6 +27,14 @@ Run this in PowerShell to install the connector and walk through a guided self-h
 irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/install.ps1 | iex
 ```
 
+![powershell](_media/powershell.JPG)
+
+to re run the guided connection setup any time run the below command on powershell
+
+```powershell
+irm https://raw.githubusercontent.com/Shaifhassan/opera-cli-release/main/script/setup-connection.ps1 | iex
+```
+
 See the [Windows guided install guide](https://shaifhassan.github.io/opera-cli-release/#/getting_started/windows-guided-install) for details on what the script does.
 
 ### Advanced / manual setup
@@ -50,10 +58,15 @@ For manual setup, individual steps, or troubleshooting:
 
 6. **Opera Import sheet** — lists every worksheet available in the workbook.
    ![import_sheet](_media/import_sheet.JPG)
-   - Worksheets without a data extraction endpoint show `N/A` in the **Import?** column.
+   - Worksheets without a data extraction endpoint and not applicable shows `N/A` in the **Import?** column.
+   - You can choose to include any existing worksheet in clear procedure by selecting **Clear**.
    - For the rest, choose **Yes** or **No** in the **Import?** column dropdown to select which modules/worksheets to import.
 
 7. **Clear** — removes property-specific codes from sheets marked **Yes**. Recommended before importing a fresh resort.
+   ![clear_prompt](_media/clear.JPG)
+   - Choose `Yes` to Clear only Sheets selected to Include in Data Import.
+   - Choosing `No` would clear all sheets with `Yes`, `No`, `Clear` in the **Import?** column.
+
 8. **Download Data** — pulls data from each selected endpoint and appends it to the property-specific codes. Progress is reported per sheet in the **Import** worksheet.
 
 Common statuses you may see: `Success`, `Error: No Data Found`, and various database errors.
@@ -67,8 +80,22 @@ Edit the **Endpoint Version** and **Endpoint** columns as needed.
 ## Adding a custom endpoint
 
 1. Write a SQL query following the [fetch formula guide](https://shaifhassan.github.io/opera-cli-release/#/excel_formula/fetch), then add it to the connector service.
-2. The query must include **no parameters, or exactly one** — `:1`, used for the resort filter. No other dynamic parameters are supported.
-3. In the endpoint definition, set:
+2. Optionally you can set a sql folder path and place the query files inside the folder. (if connector is running restart the connector)
+
+```
+setx OPERA_SQL_DIR "D:\sql"
+```
+
+3. If you want to use the default location then run the connector from the required path where you have the sql folder. you can verify the working directory when you start the connector
+
+```
+Working Directory : C:\Users\User
+Executable Path   : C:\Users\User\AppData\Local\Xkyeron\opera_connector.exe
+OPERA_SQL_DIR     : D:\SQL
+```
+
+4. The query must include **no parameters, or exactly one** — `:1`, used for the resort filter. No other dynamic parameters are supported.
+5. In the endpoint definition, set:
    - `Version` = `Custom`
    - `Endpoint` = the query file name, without file extension (e.g. `viplevels`)
 
